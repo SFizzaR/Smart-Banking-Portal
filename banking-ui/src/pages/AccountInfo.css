@@ -1,0 +1,59 @@
+﻿.account-info-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    border: 2px solid #7e57c2; /* nice purple border */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(126, 87, 194, 0.3);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.account-info-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7e57c2; /* purple background */
+    color: white;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    user-select: none;
+}
+
+    .account-info-header:focus {
+        outline: 3px solid #c39cff;
+    }
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.25s ease-in-out;
+    font-size: 1.3rem;
+}
+
+    .arrow.open {
+        transform: rotate(90deg);
+    }
+
+.account-details {
+    padding: 20px;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+    .account-details p {
+        margin: 0.5rem 0;
+    }
+
+.loading {
+    color: #7e57c2;
+    font-weight: 600;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: 600;
+}

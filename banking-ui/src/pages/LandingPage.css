@@ -1,0 +1,551 @@
+﻿p {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: math;
+    text-align: center;
+}
+@font-face {
+    font-family: 'mirage';
+    src: url('./fonts/MirageReguler.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.logo-with-image {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+.bank-logo {
+    height: 82px;
+    width: auto;
+    object-fit: contain;
+}
+@media (max-width: 600px) {
+    .bank-name {
+        font-size: 19px;
+    }
+    .bank-logo {
+        height: 36px;
+    }
+}
+.landing-page .hero-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+}
+
+.landing-page .hero-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.landing-page .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    flex: 1;
+    min-width: 280px;
+}
+.landing-page .hero-left,
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-page .hero-img {
+    max-width: 100%;
+    width: 530px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.landing-page .cta-btn {
+    display: inline-block;
+    margin: 0.9rem auto 0 auto; /* Top, Horizontal (auto), Bottom */
+    font-size: 20px; /* Increase text size */
+    padding: 0.9rem 2rem; /* Increase button size */
+    border-radius: 8px;
+    align-items: center;
+}
+
+
+body.light-mode {
+    background: linear-gradient(to bottom right, #f5f5f5, #ffffff);
+    color: #2c2c2c;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+    background: linear-gradient(to bottom right, #2e2e2e, #3c3c3c); /* Soft dark gray */
+    color: #eaeaea;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+.landing-page tagline-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.landing-page .tagline-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.landing-page .tagline-gif {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
+.landing-page .tagline-gif img {
+        max-width: 40%;
+        height: auto;
+        border-radius: 67px;
+        margin-left: 6px;
+    }
+.landing-page .benefit-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.landing-page .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    width: 290px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .landing-page .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .landing-page .card img {
+        margin-top: 1rem;
+        max-width: 100%;
+        height: 130px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+.landing-page .dark-mode .card {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+}
+.landing-page .dark-mode .card,
+.dark-mode .feature-box,
+.dark-mode .testimonial {
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.landing-page .dark-mode .navbar {
+    background-color: #1b1b1b;
+}
+
+.landing-page .dark-mode .final-cta {
+    background-color: #292929;
+}
+
+.landing-page .benefit-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.landing-page .card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 260px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .landing-page .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+.landing-page .benefit-gif {
+    width: 190px;
+    height: 180px;
+    object-fit: contain;
+    margin: 10px auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.landing-page .navbar {
+    display: flex;
+    justify-content: space-between; /* pushes name left, buttons right */
+    align-items: center; /* vertically centers both */
+    padding: 1rem 2rem;
+    background-color: #926fac; /* solid dark purple */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode .landing-page .navbar {
+    background-color: black;
+}
+
+.bank-name {
+    font-family: 'lemonmilk', serif;
+    font-size: 50px;
+    margin: 0 !important; /* kill all browser margins */
+    padding: 0 !important;
+    color: #f3e3ff;
+    flex-shrink: 0; /* never let it compress */
+    text-align: left;
+}
+
+.dark-mode .bank-name {
+    color: #c797e7;
+}
+
+.landing-page .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center; /* keep buttons vertically aligned */
+    margin-left: auto; /* pushes them fully to the right */
+}
+
+.landing-page h1 {
+    font-size: 3.1rem;
+    font-family: 'lemonmilk';
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #61417a;
+}
+.dark-mode .landing-page h1 {
+    color: #e0ceff;
+}
+.landing-page .dark-mode h1 {
+    font-size: 3.1rem;
+    font-family: 'lemonmilk';
+    color: #CBC3E3;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.landing-page h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+    color: #462c6a;
+    font-family: 'lemonmilk';
+}
+
+.landing-page h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.landing-page h4 {
+    font-size: 1.7rem;
+    margin-bottom: 0.2rem;
+}
+
+.landing-page .boxed-section {
+    margin: 2rem auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 1600px;
+    text-align: center;
+    transition: background 0.3s;
+    background-color: #eaddf5;
+}
+
+.dark-mode .landing-page .boxed-section {
+    background-color: #1a052c;
+}
+.dark-mode .landing-page h2{
+     color: aliceblue;
+}
+.landing-page .gif-caption {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #5d20a3;
+    font-family: math;
+}
+.dark-mode .landing-page .gif-caption {
+    color: #d0b3f2;
+}
+.landing-page .testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.landing-page .testimonial-pic {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.landing-page .testimonial-footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.landing-page .testimonial-content {
+    text-align: center;
+}
+
+.landing-page .testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: mediumpurple;
+}
+
+.landing-page .dark-mode .boxed-section {
+    background-color: #1c0333;
+}
+.landing-page .dark-mode h2, h3, h4 {
+    font-family: 'lemonmilk';
+    color: #CBC3E3;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.landing-page .features-grid {
+    max-width: 100%;
+}
+.landing-page .benefit-cards, .features-grid, .testimonial-cards, .preview-media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.landing-page .feature-icon {
+    width: 190px; /* Adjust size of icons */
+    height: 175px;
+    margin-bottom: 15px; /* Space between icon and heading */
+    object-fit: contain; /* Keeps the image ratio */
+    display: block;
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .landing-page .feature-icon:hover {
+        transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+.landing-page .card, .feature-box, .testimonial {
+    background-color: #8471aa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 290px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+    .landing-page .card:hover,
+    .feature-box:hover,
+    .testimonial:hover {
+        transform: translateY(-4px);
+        transform: scale(1.05); /* Slight zoom effect on hover */
+        box-shadow: 0 8px 12px #5e35b1;
+    }
+.dark-mode .landing-page .card, .feature-box, .testimonial {
+    background-color: #634aaf;
+}
+    .landing-page .cta-btn, .nav-btn, .toggle-btn {
+        background-color: mediumslateblue;
+        color: white;
+        font-family: 'lemonmilk';
+        font-size: 20px;
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+.landing-page .final-cta {
+    color: lightcyan;
+}
+.landing-page .dark-mode .final-cta {
+    background-color: dimgrey;
+}
+.landing-page .cta-btn:hover, .nav-btn:hover, .toggle-btn:hover {
+    background-color: #dcd7e5;
+    color: #5a00a0;
+    transform: translateY(-2px);
+}
+
+.landing-page .dark-mode .cta-btn, .dark-mode .nav-btn, .dark-mode .toggle-btn {
+    background-color: #7e3ff2;
+    color: white;
+}
+    .landing-page .dark-mode .cta-btn:hover, .nav-btn:hover, .toggle-btn:hover {
+        background-color: #dcd7e5;
+        color: #5a00a0;
+        transform: translateY(-2px);
+    }
+
+
+.landing-page .intro-bar {
+    background-color: #261534;
+    color: white;
+    text-align: center;
+    padding: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.landing-page .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: #d9c6f2;
+}
+.dark-mode .landing-page .hero {
+    background-color: #331b51;
+}
+    .landing-page .hero .hero-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+.landing-page .dark-mode .hero {
+    background-color: #1f1235;
+}
+
+.landing-page .trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+    .landing-page .trust-badges .badge {
+        background: #D8BFD8;
+        border-radius: 20px;
+        padding: 0.8rem 1.2rem;
+        font-weight: bold;
+        color: #522081;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        font-size: 21px;
+    }
+.dark-mode .trust-badges .badge {
+    background: white;
+    color: #6a1b9a;
+}
+.landing-page .preview-media img,
+.preview-media iframe {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.landing-page .services-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 2;
+    text-align: center;
+}
+
+.landing-page .services-image {
+    max-width: 500px;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+.landing-page .final-cta {
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+footer {
+    align-items: center;
+    text-align: center;
+}
+.final-cta {
+    background-color: #a78dd5;
+    margin-top: 1rem;
+    color: #5e35b1;
+    font-weight: bold;
+    border-radius: 6px;
+}
+.cta-btn {
+    background-color: white;
+    margin-top: 1rem;
+    color: #5e35b1;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 6px;
+}
+
+         .cta-btn:hover {
+            background: #f3e5f5;
+            transform: translateY(-2px);
+        }
+.dark-mode .final-cta {
+    background-color: #391c6d;
+    color: #e7dafc
+}
+.dark-mode .cta-btn {
+    background-color: #d0c9de;
+    font-size: 24px;
+    color:rebeccapurple;
+}
+.dark-mode .cta-btn:hover {
+    background: #f3e5f5;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hero,
+    .benefit-cards,
+    .features-grid,
+    .preview-media,
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}

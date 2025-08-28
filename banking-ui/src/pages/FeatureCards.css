@@ -1,0 +1,93 @@
+﻿.features-grid {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    max-width: 100%;
+    padding: 4rem 1rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, #7e57c2, #9575cd); /* gradient adds depth */
+    color: #fff;
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(126, 87, 194, 0.35);
+    width: 350px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left; /* better for reading bullets/pointers */
+    position: relative;
+}
+
+    .feature-card:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 16px 32px rgba(126, 87, 194, 0.6);
+        background: linear-gradient(135deg, #9575cd, #b39ddb); /* slightly lighter gradient on hover */
+    }
+
+/* Card Icon Styling */
+.feature-icon {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Title */
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Description */
+.feature-card p {
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+/* Bullet Points / Feature List */
+.feature-points {
+    margin-top: 10px;
+    padding-left: 1.4rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: ghostwhite;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+    .feature-points li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        list-style: none;
+        padding-left: 20px;
+    }
+
+        .feature-points li::before {
+            content: "✔ "; /* checkmark for bullet */
+            position: absolute;
+            left: 0;
+            color: aliceblue; /* goldish bullet for contrast */
+            font-size: 1.5rem;
+            top: 0;
+        }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%;
+        text-align: left;
+    }
+}

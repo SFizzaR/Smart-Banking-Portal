@@ -1,0 +1,108 @@
+﻿/* =======================
+Global Variables for Modes
+======================= */
+.dashboard-container.light-mode {
+    --bg-color: #f9f9f9;
+    --text-color: #222;
+    --card-bg: #d8bfd8;
+    --title-color: #4b2f7f;
+    --subtitle-color: #334155;
+    --description-color: #475569;
+    --navbar-bg: #926fac;
+    --navbar-text: #f3e3ff;
+    --button-bg: #6a5acd;
+    --button-text: #fff;
+    --filter-bg: #fff;
+    --filter-text: #475569;
+    --insight-bg: #f8fafc;
+    --insight-border: #e2e8f0;
+}
+
+.dashboard-container.dark-mode {
+    --bg-color: #181818;
+    --text-color: #eee;
+    --card-bg: #242424;
+    --title-color: #c9a3ff;
+    --subtitle-color: #ddd;
+    --description-color: #bbb;
+    --navbar-bg: #000;
+    --navbar-text: #c797e7;
+    --button-bg: #6a5acd;
+    --button-text: #fff;
+    --filter-bg: #333;
+    --filter-text: #eee;
+    --insight-bg: #1f1f1f;
+    --insight-border: #444;
+}
+
+/* =======================
+   Body & Page Container
+======================= */
+.dashboard-container {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+    .dashboard-container .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: var(--navbar-bg);
+        color: var(--navbar-text);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dashboard-container .bank-name {
+        font-family: 'lemonmilk', serif;
+        font-size: 50px;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: var(--navbar-text);
+    }
+
+    .dashboard-container .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .dashboard-container .nav-btn {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        .dashboard-container .nav-btn:hover {
+            background-color: mediumpurple;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dashboard-container .nav-btn:active {
+            transform: translateY(1px);
+        }
+h1 {
+    font-size: 3.1rem;
+    font-family: 'lemonmilk';
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #61417a;
+}
+
+/* Welcome Section */
+.dashboard-container .welcome-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+

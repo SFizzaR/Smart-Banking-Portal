@@ -1,0 +1,249 @@
+﻿/* =======================
+   Global Variables for Modes
+======================= */
+.charts-page-wrapper.light-mode {
+    --bg-color: #f9f9f9;
+    --text-color: #222;
+    --card-bg: #fff;
+    --title-color: #4b2f7f;
+    --subtitle-color: #334155;
+    --description-color: #475569;
+    --navbar-bg: #926fac;
+    --navbar-text: #f3e3ff;
+    --button-bg: #6a5acd;
+    --button-text: #fff;
+    --filter-bg: #fff;
+    --filter-text: #475569;
+    --insight-bg: #f8fafc;
+    --insight-border: #e2e8f0;
+}
+
+.charts-page-wrapper.dark-mode {
+    --bg-color: #181818;
+    --text-color: #eee;
+    --card-bg: #242424;
+    --title-color: #c9a3ff;
+    --subtitle-color: #ddd;
+    --description-color: #bbb;
+    --navbar-bg: #000;
+    --navbar-text: #c797e7;
+    --button-bg: #6a5acd;
+    --button-text: #fff;
+    --filter-bg: #333;
+    --filter-text: #eee;
+    --insight-bg: #1f1f1f;
+    --insight-border: #444;
+}
+
+/* =======================
+   Body & Page Container
+======================= */
+.charts-page-wrapper {
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+    .charts-page-wrapper .charts-page-container {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+        min-height: 100vh;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        padding: 2rem;
+    }
+
+    /* =======================
+   Navbar
+======================= */
+    .charts-page-wrapper .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: var(--navbar-bg);
+        color: var(--navbar-text);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .charts-page-wrapper .bank-name {
+        font-family: 'lemonmilk', serif;
+        font-size: 50px;
+        margin: 0 !important;
+        padding: 0 !important;
+        color: var(--navbar-text);
+    }
+
+    .charts-page-wrapper .nav-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .charts-page-wrapper .nav-btn {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        .charts-page-wrapper .nav-btn:hover {
+            background-color: mediumpurple;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .charts-page-wrapper .nav-btn:active {
+            transform: translateY(1px);
+        }
+
+    /* =======================
+   Page Titles & Description
+======================= */
+    .charts-page-wrapper .page-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        color: var(--title-color);
+    }
+
+    .charts-page-wrapper .page-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        color: var(--subtitle-color);
+    }
+
+    .charts-page-wrapper .page-description {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        text-align: center;
+        color: var(--description-color);
+    }
+
+    /* =======================
+   Filter Dropdown
+======================= */
+    .charts-page-wrapper .filter-dropdown {
+        display: block;
+        margin: 0 auto 2rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        background-color: var(--filter-bg);
+        color: var(--filter-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        font-family: 'lemonmilk';
+    }
+
+        .charts-page-wrapper .filter-dropdown:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.3);
+        }
+
+    /* =======================
+   Charts Grid & Cards
+======================= */
+    .charts-page-wrapper .charts-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .charts-page-wrapper .chart-card {
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        padding: 2.3rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+        text-align: center;
+        font-weight: bold;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 22px;
+    }
+
+        .charts-page-wrapper .chart-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .charts-page-wrapper .chart-card h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--title-color);
+        }
+
+        .charts-page-wrapper .chart-card h4.sub-heading {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--subtitle-color);
+            margin-bottom: 1rem;
+        }
+
+    /* =======================
+   Insights Box
+======================= */
+    .charts-page-wrapper .insights-box {
+        background-color: var(--insight-bg);
+        border: 1px solid var(--insight-border);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--description-color);
+    }
+
+    /* =======================
+   Buttons
+======================= */
+    .charts-page-wrapper .back-btn {
+        background-color: var(--button-bg);
+        color: var(--button-text);
+        font-family: 'lemonmilk';
+        font-size: 20px;
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        .charts-page-wrapper .back-btn:hover {
+            background-color: mediumpurple;
+            box-shadow: 0 4px 8px rgba(59,130,246,0.25);
+        }
+
+        .charts-page-wrapper .back-btn:active {
+            transform: translateY(1px);
+        }
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 900px) {
+    .charts-page-wrapper .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}

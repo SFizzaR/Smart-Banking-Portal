@@ -1,0 +1,63 @@
+﻿/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* center links */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #5a00a0; /* Deep purple */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem;
+}
+
+    .navbar-links a {
+        text-decoration: none;
+        font-weight: 600;
+        color: white;
+        font-size: 1rem;
+        padding: 0.5rem 1.4rem;
+        border-radius: 6px;
+        background-color: #7e3ff2; /* vibrant purple button bg */
+        box-shadow: 0 3px 8px rgba(126, 63, 242, 0.6);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        .navbar-links a:hover {
+            background-color: #a475ff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(164, 117, 255, 0.8);
+        }
+
+        .navbar-links a:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(126, 63, 242, 0.6);
+        }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+        .navbar-links a {
+            margin: 0.3rem;
+        }
+}
