@@ -39,9 +39,14 @@ const ChangePasswordModal = ({ closeModal }) => {
         }
 
         try {
+            if (oldPassword == newPassword) {
+                setError('New password should not be same as old password');
+                return
+
+            }
             // 1. Call backend with old and new password
             const response = await axios.post(
-                'https://localhost:7065/api/user/change-password',
+                'https://localhost:7065/api/user/changepassword',
                 {
                     OldPassword: oldPassword,
                     NewPassword: newPassword,
