@@ -1,4 +1,4 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Modal.css';
 const LoginModal = ({ onClose }) => {
@@ -11,7 +11,12 @@ const LoginModal = ({ onClose }) => {
     const handleLogin = async () => {
         setMessage("");
         try {
-            const response = await fetch("https://localhost:7065/api/User/login", {
+            if (!username || !password) {
+                setMessage("⚠️ Both username and password are required.");
+                setShowTick(false);
+                return; // ⛔ Stop API call
+            }
+            const response = await fetch("http://localhost:5202/api/User/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
