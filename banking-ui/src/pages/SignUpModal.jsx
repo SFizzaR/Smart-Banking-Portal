@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import './SignUpModal.css';
 import { useNavigate } from 'react-router-dom';
@@ -17,13 +17,36 @@ const SignUpModal = ({ onClose }) => {
 
     const [message, setMessage] = useState('');
     const [showTick, setShowTick] = useState(false);
+    const [errors, setErrors] = useState({ dob: "" });
+
+    const today = new Date();
+    today.setFullYear(today.getFullYear() - 18);
+    const maxDate = today.toISOString().split("T")[0];
+
 
     const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        // DOB validation
+        if (name === "dob") {
+            const dob = new Date(value);
+            const cutoff = new Date();
+            cutoff.setFullYear(cutoff.getFullYear() - 18);
+
+            if (dob > cutoff) {
+                setErrors(prev => ({ ...prev, dob: "You must be at least 18 years old." }));
+            } else {
+                setErrors(prev => ({ ...prev, dob: "" }));
+            }
+        }
+
+        // Update form state
         setFormData(prev => ({
             ...prev,
-            [e.target.name]: e.target.value
+            [name]: value
         }));
     };
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,7 +54,7 @@ const SignUpModal = ({ onClose }) => {
         setShowTick(false);
 
         try {
-            const response = await axios.post('https://localhost:7065/api/User/register', formData);
+            const response = await axios.post('http://localhost:5202/api/User/register', formData);
             setMessage(response.data);
 
             if (response.data === 'User registered successfully.') {
@@ -40,7 +63,7 @@ const SignUpModal = ({ onClose }) => {
                     onClose();
                     setMessage("");
                     try {
-                        const response = await fetch("https://localhost:7065/api/User/login", {
+                        const response = await fetch("http://localhost:5202/api/User/login", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json",
@@ -104,7 +127,7 @@ const SignUpModal = ({ onClose }) => {
                     </div>
                     <div className="form-group">
                         <label>Date of Birth:</label>
-                        <input type="date" name="dob" value={formData.dob} onChange={handleChange} required />
+                        <input type="date" name="dob" value={formData.dob} onChange={handleChange} required max={maxDate} />
                     </div>
                     <div className="form-group">
                         <label>Phone Number:</label>
