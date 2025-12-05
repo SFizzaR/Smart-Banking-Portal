@@ -19,10 +19,35 @@
     width: 400px;
     padding: 2rem 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
     position: relative;
     display: flex;
     flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    /* ✅ Consistent label → input spacing */
+    margin-bottom: 14px;
+}
+
+.form-input {
+    width: 100%;
+    max-width: 450px;
+    height: 30px;
+    border-radius: 5px;
+
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    margin-bottom: 14px;
 }
 
 /* Close button (red X on top right) */
@@ -41,9 +66,9 @@
     transition: color 0.3s ease;
 }
 
-    .modal-close-btn:hover {
-        color: #c0392b;
-    }
+.modal-close-btn:hover {
+    color: #c0392b;
+}
 
 /* Modal heading */
 .modal h2 {
@@ -75,10 +100,10 @@ input[type="password"] {
     outline-offset: 2px;
 }
 
-    input[type="password"]:focus {
-        border-color: #007bff;
-        outline: none;
-    }
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
 /* Container for multiple errors */
 .error-container {
@@ -87,8 +112,10 @@ input[type="password"] {
 
 /* Individual error message styling */
 .error-msg {
-    color: #b91c1c; /* dark red */
-    background-color: #f8d7da; /* light red background */
+    color: #b91c1c;
+    /* dark red */
+    background-color: #f8d7da;
+    /* light red background */
     padding: 0.5rem 1rem;
     border-radius: 5px;
     margin: 0.25rem 0;
@@ -98,8 +125,10 @@ input[type="password"] {
 
 /* Success message styling */
 .success-msg {
-    color: #155724; /* dark green */
-    background-color: #d4edda; /* light green background */
+    color: #155724;
+    /* dark green */
+    background-color: #d4edda;
+    /* light green background */
     padding: 0.6rem 1rem;
     border-radius: 5px;
     margin-bottom: 1.2rem;
@@ -109,7 +138,16 @@ input[type="password"] {
 }
 
 /* Submit button */
-.change-password-btn {
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* optional */
+    gap: 20px;
+    /* ✅ THIS controls the space between the buttons */
+    margin-top: 1rem;
+}
+
+.modal-buttons button {
     background-color: #007bff;
     color: #fff;
     font-weight: 700;
@@ -118,20 +156,14 @@ input[type="password"] {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 0.8rem;
     transition: background-color 0.3s ease;
     user-select: none;
-    width: 100%;
+    width: 45%;
 }
 
-    .change-password-btn:hover:not(:disabled) {
-        background-color: #0056b3;
-    }
-
-    .change-password-btn:disabled {
-        background-color: #7baedc;
-        cursor: not-allowed;
-    }
+.modal-buttons button:hover {
+    background-color: #0056b3;
+}
 
 /* Optional: smooth form font */
 form {

@@ -45,7 +45,7 @@ const TransferModal = ({ closeModal }) => {
         setLoading(true);
         try {
             const token = localStorage.getItem("token");
-            const res = await fetch("https://localhost:7065/api/user/transfer", {
+            const res = await fetch("http://localhost:5202/api/user/transfer", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -103,53 +103,72 @@ const TransferModal = ({ closeModal }) => {
                 </button>
 
                 <h2>Transfer Money</h2>
-                <label htmlFor="accountNumber">Receiver Account Number</label>
-                <input
-                    type="text"
-                    placeholder="Receiver Account Number"
-                    value={accountNumber}
-                    onChange={(e) => setAccountNumber(e.target.value)}
-                    disabled={loading}
-                />
-                <label htmlFor="amount">Amount</label>
-                <input
-                    type="number"
-                    placeholder="Amount"
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
-                    disabled={loading}
-                />
-                <label htmlFor="category">Category</label>
-                <select
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    disabled={loading}
-                >
-                    {categories.map((cat) => (
-                        <option key={cat} value={cat}>
-                            {cat}
-                        </option>
-                    ))}
-                </select>
-                <label htmlFor="description">
-                    Description {category === "Other" && <span style={{ color: "red" }}>*</span>}
-                </label>
-                <input
-                    type="text"
-                    placeholder="Description (required if Other)"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    disabled={loading}
-                />
-                <label>
+                <div className="form-group">
+                    <label htmlFor="accountNumber">Receiver Account Number</label>
+                    <input
+                        type="text"
+                        placeholder="Receiver Account Number"
+                        value={accountNumber}
+                        onChange={(e) => setAccountNumber(e.target.value)}
+                        disabled={loading}
+                        className="form-input"
+                    />
+                </div>
+                <div className="form-group">
+
+                    <label htmlFor="amount">Amount</label>
+                    <input
+                        type="number"
+                        placeholder="Amount"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}
+                        disabled={loading}
+                        className="form-input"
+
+                    />
+                </div>
+                <div className="form-group">
+
+                    <label htmlFor="category">Category</label>
+                    <select
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        disabled={loading}
+                        className="form-input"
+
+                    >
+                        {categories.map((cat) => (
+                            <option key={cat} value={cat}>
+                                {cat}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="form-group">
+
+                    <label htmlFor="description">
+                        Description {category === "Other" && <span style={{ color: "red" }}>*</span>}
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Description (required if Other)"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        disabled={loading}
+                        className="form-input"
+
+                    />
+                </div>
+                <div className="checkbox-group">
+                    <span>Is Salary Credit?</span>
                     <input
                         type="checkbox"
                         checked={isSalaryCredit}
                         onChange={(e) => setIsSalaryCredit(e.target.checked)}
                         disabled={loading}
                     />
-                    Is Salary Credit?
-                </label>
+                </div>
+
 
                 <div className="modal-buttons">
                     <button onClick={handleTransfer} disabled={loading}>
@@ -157,6 +176,7 @@ const TransferModal = ({ closeModal }) => {
                     </button>
                     <button onClick={closeModal} disabled={loading}>Cancel</button>
                 </div>
+
 
                 {message && (
                     <p style={{ color: isSuccess ? "green" : "red", marginTop: "1rem" }}>
