@@ -43,7 +43,7 @@ The portal simulates **core banking operations** such as account management, sec
    dotnet run
 
 3. **Frontend Setup**
-   cd frontend
+   cd banking-ui
    npm install
    npm start
 
